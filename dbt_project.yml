@@ -39,8 +39,9 @@ models:
       +file_format: parquet
       +location_root: "/home/bala/repo/learndbt/feature_store/"
       +group: feature_store
-  # elementary:
-  #   +schema: "elementary"
+  elementary:
+    +schema: "elementary"
+    +file_format: delta
 
 # dispatch:
 #   - macro_namespace: dbt

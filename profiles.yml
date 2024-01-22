@@ -5,10 +5,13 @@ dbt_test:
       type: spark
       method: session
       schema: feature_lake
-      host: NA                       # not used, but required by `dbt-core`
+      host: NA
       server_side_parameters:
-        "spark.driver.memory": "1g"
+        "spark.sql.extensions": "io.delta.sql.DeltaSparkSessionExtension"
+        "spark.sql.catalog.spark_catalog": "org.apache.spark.sql.delta.catalog.DeltaCatalog"
+        "spark.jars.packages": "io.delta:delta-spark_2.12:3.0.0"
         "spark.sql.legacy.allowNonEmptyLocationInCTAS": "true"
+
 
 # elementary:
 #   outputs:
@@ -23,3 +26,16 @@ dbt_test:
 #       threads: 1
 
 # models/edr/dbt_artifacts/dbt_tests.sql
+
+elementary:
+  outputs:
+    default:
+      type: "spark"
+      host: "NA"
+      method: session
+      schema: "monitoring"
+      server_side_parameters:
+        "spark.sql.extensions": "io.delta.sql.DeltaSparkSessionExtension"
+        "spark.sql.catalog.spark_catalog": "org.apache.spark.sql.delta.catalog.DeltaCatalog"
+        "spark.jars.packages": "io.delta:delta-spark_2.12:3.0.0"
+      threads: 1
