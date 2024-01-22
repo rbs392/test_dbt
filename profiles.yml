@@ -33,7 +33,7 @@ elementary:
       type: "spark"
       host: "NA"
       method: session
-      schema: "monitoring"
+      schema: "feature_lake_elementary"
       server_side_parameters:
         "spark.sql.extensions": "io.delta.sql.DeltaSparkSessionExtension"
         "spark.sql.catalog.spark_catalog": "org.apache.spark.sql.delta.catalog.DeltaCatalog"

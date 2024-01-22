@@ -6,6 +6,13 @@ models:
     constraints:
       - type: primary_key
         columns: [date, symbol]
+    config:
+      elementary:
+        timestamp_column: date
+    tests:
+      - elementary.all_columns_anomalies
+      - elementary.schema_changes
+      - elementary.volume_anomalies
     columns:
       - name: date
         data_type: date
