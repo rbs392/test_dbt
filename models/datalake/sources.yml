@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: datalake
+    schema: csv
+    quoting:
+      schema: false
+    tables:
+      - name: stock_data
+        identifier: "/home/bala/repo/learndbt/dbt_test/seeds/data.csv"
+        quoting:
+          identifier: true

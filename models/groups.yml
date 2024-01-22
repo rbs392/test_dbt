@@ -1,0 +1,12 @@
+groups:
+  - name: feature_store
+    owner:
+      email: team-ml-platforma@test.com
+
+  - name: intermediate
+    owner:
+      email: team-ml-platforma@test.com
+  
+  - name: datalake
+    owner:
+      email: data-team@test.com

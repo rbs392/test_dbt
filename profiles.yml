@@ -1,0 +1,25 @@
+dbt_test:
+  target: dev
+  outputs:
+    dev:
+      type: spark
+      method: session
+      schema: feature_lake
+      host: NA                       # not used, but required by `dbt-core`
+      server_side_parameters:
+        "spark.driver.memory": "1g"
+        "spark.sql.legacy.allowNonEmptyLocationInCTAS": "true"
+
+# elementary:
+#   outputs:
+#     default:
+#       type: postgres
+#       dbname: monitoring
+#       host: localhost
+#       user: postgres
+#       pass: mysecretpassword
+#       port: 5432
+#       schema: test
+#       threads: 1
+
+# models/edr/dbt_artifacts/dbt_tests.sql
